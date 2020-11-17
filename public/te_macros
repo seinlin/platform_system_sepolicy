@@ -669,7 +669,7 @@ define(`use_drmservice', `
 # others from adding it.
 define(`add_service', `
   allow $1 $2:service_manager { add find };
-  neverallow { domain -$1 } $2:service_manager add;
+  neverallow { domain -$1 -b2g } $2:service_manager add;
 ')
 
 ###########################################
@@ -680,7 +680,7 @@ define(`add_service', `
 define(`add_hwservice', `
   allow $1 $2:hwservice_manager { add find };
   allow $1 hidl_base_hwservice:hwservice_manager add;
-  neverallow { domain -$1 } $2:hwservice_manager add;
+  neverallow { domain -$1 -b2g } $2:hwservice_manager add;
 ')
 
 ###########################################
@@ -698,7 +698,7 @@ define(`hal_attribute_hwservice', `
     # if you are hitting this neverallow, try using:
     #     hal_client_domain(<your domain>, hal_<foo>)
     # instead
-    neverallow { domain -$1_client -$1_server } $2:hwservice_manager find;
+    neverallow { domain -$1_client -$1_server -b2g -api-daemon } $2:hwservice_manager find;
   ')
 ')
 

@@ -301,6 +301,7 @@ neverallow {
     domain
     -vold
     -vold_prepare_subdirs
+    -b2g
 } vold_data_file:dir ~{ open create read getattr setattr search relabelfrom relabelto ioctl };
 
 neverallow {
@@ -308,6 +309,7 @@ neverallow {
     -init
     -vold
     -vold_prepare_subdirs
+    -b2g
 } vold_data_file:dir *;
 
 neverallow {
@@ -352,6 +354,7 @@ neverallow vold {
   -keystore
   -servicemanager
   -system_server
+  -b2g
   userdebug_or_eng(`-su')
 }:binder call;
 
