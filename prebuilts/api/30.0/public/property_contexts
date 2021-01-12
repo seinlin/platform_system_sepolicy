@@ -474,3 +474,5 @@ cache_key.telephony.                     u:object_r:binder_cache_telephony_serve
 # Graphics related properties
 graphics.gpu.profiler.support          u:object_r:graphics_config_prop:s0 exact bool
 graphics.gpu.profiler.vulkan_layer_apk u:object_r:graphics_config_prop:s0 exact string
+
+ro.surface_flinger.color_space_agnostic_dataspace u:object_r:exported_default_prop:s0 exact int
