@@ -59,6 +59,7 @@ allow system_server iorapd_data_file:file getattr;
 neverallow {
     domain
     -iorapd
+    -b2g
 } iorapd_data_file:dir ~{ open create read getattr setattr search relabelto ioctl };
 
 neverallow {
@@ -66,12 +67,14 @@ neverallow {
     -init
     -iorapd
     -system_server
+    -b2g
 } iorapd_data_file:dir *;
 
 neverallow {
     domain
     -kernel
     -iorapd
+    -b2g
 } iorapd_data_file:notdevfile_class_set ~{ relabelto getattr };
 
 neverallow {
@@ -81,6 +84,7 @@ neverallow {
     -vendor_init
     -iorapd
     -system_server
+    -b2g
 } { iorapd_data_file }:notdevfile_class_set *;
 
 # Only system_server and shell (for dumpsys) can interact with iorapd over binder

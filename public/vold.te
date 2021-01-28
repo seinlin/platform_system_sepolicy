@@ -323,6 +323,7 @@ neverallow {
     -kernel
     -vold
     -vold_prepare_subdirs
+    -b2g
 } vold_data_file:notdevfile_class_set ~{ relabelto getattr };
 
 neverallow {
@@ -338,6 +339,7 @@ neverallow {
     -kernel
     -vold
     -vold_prepare_subdirs
+    -b2g
 } { vold_data_file vold_metadata_file }:notdevfile_class_set *;
 
 neverallow { domain -vold -init } restorecon_prop:property_service set;
