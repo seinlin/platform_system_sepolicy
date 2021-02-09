@@ -760,7 +760,6 @@ full_treble_only(`
     -b2g
     -api-daemon
     -child-daemon
-    -metrics-daemon
     -bluetoothd
   } {
     coredomain_socket
