@@ -2,7 +2,6 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(LOCAL_PATH)/definitions.mk
 include $(LOCAL_PATH)/policy_version.mk
-include $(LOCAL_PATH)/b2g_sepolicy.mk
 
 include $(CLEAR_VARS)
 
